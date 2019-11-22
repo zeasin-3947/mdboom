@@ -1,0 +1,27 @@
+---
+layout: moban
+---
+
+<!-- 文章列表开始 -->
+{% for post in site.posts %}
+<article class="post post-1">
+    <header class="entry-header">
+        <h1 class="entry-title">
+            <a href="{{site.baseurl}}{{post.url}}">{{post.title}}</a>
+        </h1>
+        <div class="entry-meta">
+            <span class="post-category"><a href="{{site.baseurl}}{{post.url}}">博客</a></span>
+            <span class="post-date"><a href="#"><time class="entry-date">{{post.date|date_to_long_string}}</time></a></span>
+            <span class="post-author"><a href="#">{{post.author|default:site.author}}</a></span>
+           
+        </div>
+    </header>
+    <div class="entry-content clearfix">
+        <p>{{post.excerpt|strip_html|truncate:100}}</p>
+        <div class="read-more cl-effect-14">
+            <a href="{{site.baseurl}}{{post.url}}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
+        </div>
+    </div>
+</article>
+{% endfor %}
+<!-- 文章列表结束 -->
